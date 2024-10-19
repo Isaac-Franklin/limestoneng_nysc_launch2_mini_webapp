@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--[if mso
+      ]><xml
+        ><o:OfficeDocumentSettings
+          ><o:PixelsPerInch>96</o:PixelsPerInch
+          ><o:AllowPNG /></o:OfficeDocumentSettings></xml
+    ><![endif]-->
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: tahoma, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .logo {
+        background-color: white;
+        width: 100vw;
+        padding: 5px;
+        text-align: center;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .mailbody {
+        width: 70%;
+        margin: auto;
+        color: white;
+      }
+      .footerbtn {
+        background-color: white;
+        padding: 10px;
+        width: 100vw;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .footerbtn button {
+        background-color: #59a2ea;
+        padding: 10px;
+        font-size: 1.2rem;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .mailbody p a {
+        color: whitesmoke;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #59a2ea;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    "
+  >
+    <div class="logo">
+      <div style="max-width: 84px">
+        <img
+          src="https://limestone.ng/wp-content/uploads/2024/05/Limestone-Logo-1.png"
+          style="display: block; height: auto; border: 0; width: 100%"
+          width="84"
+        />
+      </div>
+    </div>
+
+    <div class="mailbody">
+      <h4>Hello {{fullname}},</h4>
+      <br />
+
+      <p>You successfully registered for the Limestone 2.0 launch.</p>
+      <p>
+        Your referral URL {{referralURL}}. Copy this and send to other corp
+        members to register and earn cash when they register
+      </p>
+      <p>
+        Your referral code is {{referralcode}}. You can send them this to enter
+        in the form on this page: nysc.limestone.ng
+      </p>
+
+      <p>
+        To see the number of people you have registered so far,
+        <a href="https://nysc.limestone.ng/viewreferrals/">click here</a>
+      </p>
+
+        <br /><br />
+        Best Regards,<br />
+        Limestone Support
+      </p>
+    </div>
+  </body>
+</html>

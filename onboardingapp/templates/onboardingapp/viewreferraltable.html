@@ -1,0 +1,65 @@
+{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
+    <link rel="stylesheet" href={% static 'css/referralpage.css' %} />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>View all referrals For Limestone 2.0 Launch</title>
+  </head>
+  <body>
+    <div id="flashmessage">
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-{{ message.tags}} m-0" role="alert">
+        <strong>{{ message }}</strong>
+      </div>
+      {% endfor %} {% endif %}
+    </div>
+    <div class='returnButton'>        
+        <a href ={% url 'Dashboard' %}><img src={% static 'img/return.png' %} title='Return to dashboard' /></a>
+    </div>
+    <div class="table-container">
+      <table id="myTable" class="styled-table">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Full Name</th>
+            <th onclick="sortTable(1)">Date registered</th>
+            <th onclick="sortTable(2)">Number of referrals</th>
+            <th onclick="sortTable(3)">Earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for getAllRegistrants in getAllRegistrantsReferralData %}
+          <tr>
+            <td>{{getAllRegistrants.fullname}}</td>
+            <td>{{getAllRegistrants.created_at}}</td>
+            <td>{{getAllRegistrants.numberOfReferrals}}</td>
+            <td>***</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% comment %} <div>
+          <p><a href= {% url 'Dashboard' %} >Click here</a> to return to dashboard</p>
+      </div> {% endcomment %}
+      <br/>
+    </div> 
+    
+    <script src={% static 'js/referralpage.js' %}></script>
+    {% comment %} <script src={% static 'js/main.js' %}></script> {% endcomment %}
+  </body>
+</html>
+
+{% endblock content %}

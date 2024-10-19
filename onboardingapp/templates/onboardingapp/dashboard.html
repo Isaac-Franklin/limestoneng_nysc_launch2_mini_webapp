@@ -1,0 +1,61 @@
+<!-- @format -->
+{% comment %} {% include 'generalonboard.html' %}  {% endcomment %}
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
+		{% comment %} <link rel="stylesheet" href={% static 'css/style.css' %} /> {% endcomment %}
+		<link rel="stylesheet" href={% static 'css/dashboard.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Dashboard | Limestone 2.0 Launch</title>
+	</head>
+	<body>
+        <div class='shadow'></div>
+        <div class='shadow1'></div>
+        <div id="flashmessage">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong>{{ message }}</strong>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-slide" id="slide-5">
+              <div class="slide-content">
+                <h3> Welcome aboard {{request.user.first_name}}, your registration was successful</h3>
+                <p>Your referral code is: {{getReferralCode}}</p>
+                {% comment %} <p>Your Referral Link: https://nysc.limestone.ng/{{getReferralCode}}</p> {% endcomment %}
+                {% if getReferrerFullName %}
+                  <p>You was reffered by: {{getReferrerFullName}}</p>
+                {% endif %}
+                <br/>
+                <div class='referalcodeinput'>
+                  <input type="text" value= https://nysc.limestone.ng/{{getReferralCode}} />
+                  <button class='copyreferallink2' style="border-radius: 12px;">Click to copy</button>
+                </div><br/>
+                <div>
+                  <p><a href= {% url 'ReferralTable' %} style="color: white">Click here</a> to see referral board</p>
+                  {% comment %} <p>Join us on social media for updates and news:</p>
+                  <div class='socialicons'>
+                    <a href="https://www.facebook.com/LimestoneNG" target="_blank"><img src={% static 'img/facebook.png' %} /></a>
+                    <a href="https://www.instagram.com/limestone_ng/" target="_blank"><img src={% static 'img/instagram.png' %} /></a>
+                    <a href="https://www.twitter.com/limestone_ng" target="_blank"><img src={% static 'img/twitter.png' %} /></a>
+                  </div> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div> 
+        <script src={% static 'js/dashboard.js' %}></script>
+    </body>
+</html>
+
+{% endblock content %}

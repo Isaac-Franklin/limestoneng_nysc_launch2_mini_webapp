@@ -1,0 +1,116 @@
+/* Base container for centering the table */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    position: relative; 
+  }
+  
+
+
+.table-container {
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Stylish table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* font-family: 'Arial', sans-serif; */
+    font-size: 14px;
+  }
+  
+  /* Header styles */
+  .styled-table thead tr {
+    background-color: #287CF4;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table data cell styles */
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  
+  /* Row hover effect */
+  .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #287CF4;
+  }
+  
+  /* Hover effect for rows */
+  .styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Sorting indicator on table header */
+  .styled-table th {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .styled-table th::after {
+    content: '\25B2'; /* Default arrow pointing up */
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    visibility: hidden;
+  }
+  
+  .styled-table th.sorted-asc::after {
+    visibility: visible;
+    content: '\25B2'; /* Arrow pointing up */
+  }
+  
+  .styled-table th.sorted-desc::after {
+    visibility: visible;
+    content: '\25BC'; /* Arrow pointing down */
+  }
+  
+
+
+  /* Flash message base style */
+  #flashmessage {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    transition: 0.8s ease-in-out;
+    z-index: 1000;
+  }
+  
+
+
+
+
+  @media only screen and (max-width: 1000px){
+    *{
+        font-size: 14px;
+    }
+
+    
+    .table-container {
+        width: 100%;
+        margin: 50px auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+  
+  }

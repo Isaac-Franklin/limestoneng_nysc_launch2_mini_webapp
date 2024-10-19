@@ -1,0 +1,5 @@
+SECRET_KEY = 'django-insecure-$(5hi)9gp1b@9a!9h&qwh51-g44f305ip2s1up4rdigi5#_%ch'
+DEBUG = 'True'
+EMAIL_HOST_PASSWORD = 'bvcghbvakixludfm'
+EMAIL_HOST_USER = 'limestoneapp1@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'

@@ -1,0 +1,134 @@
+<!-- @format -->
+{% comment %} {% include 'generalonboard.html' %}  {% endcomment %}
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'css/style.css' %} />
+		<link rel="stylesheet" href={% static 'css/registration.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Register | Limestone 2.0 Launch</title>
+	</head>
+	<body>
+        <div class='shadow'></div>
+        <div class='shadow1'></div>
+        <div id="flashmessage">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong>{{ message }}</strong>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-slide" id="slide-1">
+              <div class="slide-content">
+                <h1>Double your Kopa hustle</h1>
+                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
+                    have answered the clarion call to serve our mother's land and 
+                    for all our awaiting copers. Limestone is here to guarantee your 
+                    safety while in service and top up your allawee.
+                </p>
+                <h3>22nd November, 2024</h3>
+                <button class='registerforlaunch'  style="border-radius: 12px;">Register</button>
+              </div>
+            </div>
+            <div class="slider-slide" id="slide-2">
+              <div class="slide-content">
+                <h1>Balance Corpers life with Limestone 2.0</h1>
+                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
+                    have answered the clarion call to serve our mother's land and 
+                    for all our awaiting copers. Limestone is here to guarantee your 
+                    safety while in service and top up your allawee.
+                </p>
+                <h3>22nd November, 2024</h3>
+                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
+              </div>
+            </div>
+            <div class="slider-slide" id="slide-3">
+              <div class="slide-content">
+                <h1>Ensure safety at your favourite mammy spot</h1>
+                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
+                    have answered the clarion call to serve our mother's land and 
+                    for all our awaiting copers. Limestone is here to guarantee your 
+                    safety while in service and top up your allawee.
+                </p>
+                <h3>22nd November, 2024</h3>
+                <button class='registerforlaunch'  style="border-radius: 12px;">Register</button>
+              </div>
+            </div>
+            <div class="slider-slide" id="slide-4">
+              <div class="slide-content">
+                <h1>Eliminate PPA security concern with Limestone 2.0</h1>
+                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
+                    have answered the clarion call to serve our mother's land and 
+                    for all our awaiting copers. Limestone is here to guarantee your 
+                    safety while in service and top up your allawee.
+                </p>
+                <h3>22nd November, 2024</h3>
+                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
+              </div>
+            </div>
+            <div class="slider-slide" id="slide-5">
+              <div class="slide-content">
+                <h1>Allawee never drop? No worry, Limestone don show</h1>
+                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
+                    have answered the clarion call to serve our mother's land and 
+                    for all our awaiting copers. Limestone is here to guarantee your 
+                    safety while in service and top up your allawee.
+                </p>
+                <h3>22nd November, 2024</h3>
+                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>        
+        
+        <div class='regpageform'>
+            <div class='formintro'>
+                <div>                    
+                    <h1>Register For this Launch</h1>
+                    <p>Provide your details below to secure your spot!</p>
+                </div>
+                <div class='closeimg'>
+                    <img src={% static 'img/close.png' %} />
+                </div>
+            </div><br/><br/>
+            <div>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <div>
+                        <label><p>Full Name</p><label>
+                        <input type="text" name="fullname" required placeholder="eg: Community manager" />
+                    </div><br/>
+                    <div>
+                        <label><p>Email address</p><label>
+                        <input type="text" name="email" required placeholder="eg: john@yopmail.com" />
+                    </div><br/>
+                    <div class='modeform'>
+                        <div>
+                            <label><p>Phone number</p><label>
+                            <input type="text" name="phonenumber" required placeholder="eg: 09122546356" />
+                        </div>
+                        <div class='referralinput'>
+                            <label><p>Referral code <i>- Optional</i></p><label>
+                            <input type="text" name="referercode" placeholder="eg: ju1982%[3" />
+                        </div>
+                    </div>
+                    <button type="submit" style="border-radius: 12px;">Register</button>
+                </form>
+            </div>
+        </div>
+        <script src={% static 'js/main.js' %}></script>
+    </body>
+</html>
+
+{% endblock content %}

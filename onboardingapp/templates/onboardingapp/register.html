@@ -1,0 +1,59 @@
+<!-- @format -->
+{% comment %} {% include 'generalonboard.html' %}  {% endcomment %}
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+{% comment %} <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'css/registration.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Register | Limestone 2.0 Launch</title>
+	</head>
+	<body>
+        <div class='shadow'></div>
+        <div class='regpageform'>
+            <div class='formintro'>
+                <div>                    
+                    <h1>Register For this Launch</h1>
+                    <p>Provide your details below to secure your spot!</p>
+                </div>
+                <div class='closeimg'>
+                    <img src={% static 'img/close.png' %} />
+                </div>
+            </div><br/><br/>
+            <div>
+                <form>
+                    <div>
+                        <label><p>Full Name</p><label>
+                        <input type="text" name="fullname" required placeholder="eg: Community manager" />
+                    </div><br/>
+                    <div>
+                        <label><p>Email address</p><label>
+                        <input type="text" name="email" required placeholder="eg: john@yopmail.com" />
+                    </div><br/>
+                    <div class='modeform'>
+                        <div>
+                            <label><p>Phone number</p><label>
+                            <input type="text" name="phone" required placeholder="eg: 09122546356" />
+                        </div>
+                        <div>
+                            <label><p>Referral code <i>- Optional</i></p><label>
+                            <input type="text" name="ref_code" required placeholder="eg: ju19823" />
+                        </div>
+                    </div>
+                    <button type="submit" style="border-radius: 12px;">Register</button>
+                </form>
+            </div>
+        </div>       
+        <script src={% static 'js/main.js' %}></script>
+    </body>
+</html> {% endcomment %}
+
+{% endblock content %}
