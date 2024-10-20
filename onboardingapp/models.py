@@ -18,7 +18,7 @@ class LaunchRegistrants(models.Model):
         ordering = ['-edited_at', '-created_at']
         
     def __str__(self):
-        return f'{self.fullname} | {self.fullname} | {self.referralcode}'
+        return f'{self.email} | {self.referralcode} referred by {self.referercode}'
 
 
 

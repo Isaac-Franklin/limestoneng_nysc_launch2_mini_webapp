@@ -1,13 +1,14 @@
 <!-- @format -->
-{% comment %} {% include 'generalonboard.html' %}  {% endcomment %}
+{% comment %} {% include 'general.html' %}  {% endcomment %}
 {% load static %} 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
-		{% comment %} <link rel="stylesheet" href={% static 'css/style.css' %} /> {% endcomment %}
+		<link rel="icon" type="image/x-icon" href={% static 'img/logo.png' %}> 
+		<link rel="stylesheet" href={% static 'css/style.css' %} />
+    <link rel="stylesheet" href={% static 'css/general.css' %} />
 		<link rel="stylesheet" href={% static 'css/dashboard.css' %} />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +16,31 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<title>Dashboard | Limestone 2.0 Launch</title>
+		<title>Register | Limestone 2.0 Launch</title>
 	</head>
+  <nav class="navbar">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    <div class="logo">
+      <a href="#">
+          <img src={% static 'img/textlogo.png' %} /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="button-container">
+      <a href="#" class="cta-button registerforlaunch">Register</a>
+    </div>
+  </nav>
+
 	<body>
         <div class='shadow'></div>
         <div class='shadow1'></div>
@@ -28,33 +52,65 @@
             {% endfor %} {% endif %}
         </div>
         
-        <div class="slider-container">
-            <div class="slider-slide" id="slide-5">
-              <div class="slide-content">
-                <h3> Welcome aboard {{request.user.first_name}}, your registration was successful</h3>
-                <p>Your referral code is: {{getReferralCode}}</p>
-                {% comment %} <p>Your Referral Link: https://nysc.limestone.ng/{{getReferralCode}}</p> {% endcomment %}
-                {% if getReferrerFullName %}
-                  <p>You was reffered by: {{getReferrerFullName}}</p>
-                {% endif %}
-                <br/>
-                <div class='referalcodeinput'>
-                  <input type="text" value= https://nysc.limestone.ng/{{getReferralCode}} />
-                  <button class='copyreferallink2' style="border-radius: 12px;">Click to copy</button>
-                </div><br/>
-                <div>
-                  <p><a href= {% url 'ReferralTable' %} style="color: white">Click here</a> to see referral board</p>
-                  {% comment %} <p>Join us on social media for updates and news:</p>
-                  <div class='socialicons'>
-                    <a href="https://www.facebook.com/LimestoneNG" target="_blank"><img src={% static 'img/facebook.png' %} /></a>
-                    <a href="https://www.instagram.com/limestone_ng/" target="_blank"><img src={% static 'img/instagram.png' %} /></a>
-                    <a href="https://www.twitter.com/limestone_ng" target="_blank"><img src={% static 'img/twitter.png' %} /></a>
-                  </div> {% endcomment %}
-              </div>
+        <div class='main'>
+          <div class='maincontent'>
+            <h3>Welcome aboard {{request.user.first_name}},</h3>
+            {% comment %} <h3>You're ready to join the revolution - LIMESTONE 2.0</h3> {% endcomment %}
+            <div class='line'>
+              <h1>Make Money When You Invite Someone...</h1>
+              <img src={% static 'img/line.png' %} />
             </div>
+            <p>Your referral code is: {{getReferralCode}}</p>
+            {% comment %} <p>Your Referral Link: https://nysc.limestone.ng/register{{getReferralCode}}</p> {% endcomment %}
+            {% if getReferrerFullName %}
+              {% if getReferrerFullName != 'None' %}
+                <p>You was reffered by: {{getReferrerFullName}}</p>
+              {% endif %}
+            {% endif %}
+            <div class='referalcodeinput'>
+              <input type="text" value= https://launchpartners.limestone.ng/register/{{getReferralCode}} />
+              <button class='copyreferallink2' style="border-radius: 12px;">Click to copy</button>
+            </div>
+            <div>
+              <p><a href= {% url 'ReferralTable' %} style="color: white">Click here</a> to see referral board</p>
+              {% comment %} <p>Join us on social media for updates and news:</p>
+              <div class='socialicons'>
+                <a href="https://www.facebook.com/LimestoneNG" target="_blank"><img src={% static 'img/facebook.png' %} /></a>
+                <a href="https://www.instagram.com/limestone_ng/" target="_blank"><img src={% static 'img/instagram.png' %} /></a>
+                <a href="https://www.twitter.com/limestone_ng" target="_blank"><img src={% static 'img/twitter.png' %} /></a>
+              </div> {% endcomment %}
           </div>
-        </div> 
-        <script src={% static 'js/dashboard.js' %}></script>
+            {% comment %} <p>
+              Limestone 2.0 is the latest version of the app, allowing users to create circles of 
+              family and close friends for information sharing
+            </p> {% endcomment %}
+            <h4>22nd November, 2024.</h4>
+            <h3>LAUNCH STARTS IN</h3>
+            <div class="countdown-container">
+              <div id="countdown">
+                  <div class="time-section">
+                      <span id="days"></span>
+                      <p>Days</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="hours"></span>
+                      <p>Hours</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="minutes"></span>
+                      <p>Minutes</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="seconds"></span>
+                      <p>Seconds</p>
+                  </div>
+              </div>
+          </div>
+          {% comment %} <button class='registerforlaunch'>Register</button> {% endcomment %}
+          </div>
+        </div>
+        {% comment %} <script src={% static 'js/dashboard.js' %}></script> {% endcomment %}
+        <script src={% static 'js/main.js' %}></script>
     </body>
 </html>
 

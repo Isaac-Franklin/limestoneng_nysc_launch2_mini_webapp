@@ -1,14 +1,15 @@
 <!-- @format -->
-{% comment %} {% include 'generalonboard.html' %}  {% endcomment %}
+{% comment %} {% include 'general.html' %}  {% endcomment %}
 {% load static %} 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/x-icon" href={% static 'img/logo.PNG' %}> 
+		<link rel="icon" type="image/x-icon" href={% static 'img/logo.png' %}> 
 		<link rel="stylesheet" href={% static 'css/style.css' %} />
 		<link rel="stylesheet" href={% static 'css/registration.css' %} />
+    <link rel="stylesheet" href={% static 'css/general.css' %} />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
@@ -17,6 +18,29 @@
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<title>Register | Limestone 2.0 Launch</title>
 	</head>
+  <nav class="navbar">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    <div class="logo">
+      <a href="#">
+          <img src={% static 'img/textlogo.png' %} /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="button-container">
+      <a href="#" class="cta-button registerforlaunch">Register</a>
+    </div>
+  </nav>
+
 	<body>
         <div class='shadow'></div>
         <div class='shadow1'></div>
@@ -28,70 +52,43 @@
             {% endfor %} {% endif %}
         </div>
         
-        <div class="slider-container">
-            <div class="slider-slide" id="slide-1">
-              <div class="slide-content">
-                <h1>Double your Kopa hustle</h1>
-                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
-                    have answered the clarion call to serve our mother's land and 
-                    for all our awaiting copers. Limestone is here to guarantee your 
-                    safety while in service and top up your allawee.
-                </p>
-                <h3>22nd November, 2024</h3>
-                <button class='registerforlaunch'  style="border-radius: 12px;">Register</button>
-              </div>
+        <div class='main'>
+          <div class='maincontent'>
+            <h3>JOIN THE REVOLUTION - LIMESTONE 2.0</h3>
+            <div class='line'>
+              <h1>One Platform, Limitless Community Solutions</h1>
+              <img src={% static 'img/line.png' %} />
             </div>
-            <div class="slider-slide" id="slide-2">
-              <div class="slide-content">
-                <h1>Balance Corpers life with Limestone 2.0</h1>
-                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
-                    have answered the clarion call to serve our mother's land and 
-                    for all our awaiting copers. Limestone is here to guarantee your 
-                    safety while in service and top up your allawee.
-                </p>
-                <h3>22nd November, 2024</h3>
-                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
+            <p>
+              Limestone 2.0 is the latest version of the app, allowing users to create circles of 
+              family and close friends for information sharing
+            </p>
+            <h4>22nd November, 2024.</h4>
+            <h3>LAUNCH STARTS IN</h3>
+            <div class="countdown-container">
+              <div id="countdown">
+                  <div class="time-section">
+                      <span id="days"></span>
+                      <p>Days</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="hours"></span>
+                      <p>Hours</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="minutes"></span>
+                      <p>Minutes</p>
+                  </div>
+                  <div class="time-section">
+                      <span id="seconds"></span>
+                      <p>Seconds</p>
+                  </div>
               </div>
-            </div>
-            <div class="slider-slide" id="slide-3">
-              <div class="slide-content">
-                <h1>Ensure safety at your favourite mammy spot</h1>
-                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
-                    have answered the clarion call to serve our mother's land and 
-                    for all our awaiting copers. Limestone is here to guarantee your 
-                    safety while in service and top up your allawee.
-                </p>
-                <h3>22nd November, 2024</h3>
-                <button class='registerforlaunch'  style="border-radius: 12px;">Register</button>
-              </div>
-            </div>
-            <div class="slider-slide" id="slide-4">
-              <div class="slide-content">
-                <h1>Eliminate PPA security concern with Limestone 2.0</h1>
-                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
-                    have answered the clarion call to serve our mother's land and 
-                    for all our awaiting copers. Limestone is here to guarantee your 
-                    safety while in service and top up your allawee.
-                </p>
-                <h3>22nd November, 2024</h3>
-                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
-              </div>
-            </div>
-            <div class="slider-slide" id="slide-5">
-              <div class="slide-content">
-                <h1>Allawee never drop? No worry, Limestone don show</h1>
-                <p>Limestone is Launchine the new Limestone 2.0 for all copers who 
-                    have answered the clarion call to serve our mother's land and 
-                    for all our awaiting copers. Limestone is here to guarantee your 
-                    safety while in service and top up your allawee.
-                </p>
-                <h3>22nd November, 2024</h3>
-                <button class='registerforlaunch' style="border-radius: 12px;">Register</button>
-              </div>
-            </div>
           </div>
-        </div>        
-        
+          <button class='registerforlaunch'>Register</button>
+          </div>
+        </div>
+
         <div class='regpageform'>
             <div class='formintro'>
                 <div>                    
